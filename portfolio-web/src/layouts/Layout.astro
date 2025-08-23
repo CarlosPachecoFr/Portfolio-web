@@ -1,22 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Carlos Pacheco - Portfolio</title>
 	</head>
 	<body>
+		<header class="flex justify-between items-center m-6">
+			<div>
+				<p class="text-[#33CE33] text-2xl font-bold drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]">PORTFOLIO</p>
+			</div>
+			<nav>
+				<ul class="list-none flex gap-8 text-[14px] font-bold text-gray-500">
+					<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">INICIO</a></li>
+					<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">SOBRE MÍ</a></li>
+					<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">TECNOLOGÍAS</a></li>
+					<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">EXPERIENCIA</a></li>
+					<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">PROYECTOS</a></li>
+					<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">CONTACTO</a></li>
+				</ul>
+			</nav>
+		</header>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
