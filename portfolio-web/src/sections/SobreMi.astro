@@ -6,10 +6,10 @@ import TarjetaSobreMi from "../components/TarjetaSobreMi.astro";
     <div class="flex flex-col items-center justify-center">
         <p class="text-[30px] font-bold drop-shadow-[0_0_8px_rgba(51,206,51,0.6)] mt-20">Sobre mí</p>
         <div class="border-b-4 border-b-[#33CE33] w-15 mt-5"></div>
-        <div class="grid grid-cols-2 items-center m-20 mx-40">
-            <div class="flex justify-start items-center">
-                <div class="relative w-80 h-80 rounded-full border-4 border-[#33CE33] animate-borderPulse overflow-hidden">
-                    <img class="w-full h-full object-cover rounded-full" src="./src/assets/sobre-mi.png" alt="">
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center px-10 gap-8 mt-15 md:px-20">
+            <div class="flex justify-center items-center">
+                <div class="relative w-60 h-60 md:w-80 md:h-80 rounded-full border-4 border-[#33CE33] animate-borderPulse overflow-hidden">
+                    <img class="w-full h-full object-cover" src="./src/assets/sobre-mi.png" alt="">
                 </div>
             </div>
             <div>
@@ -21,20 +21,18 @@ import TarjetaSobreMi from "../components/TarjetaSobreMi.astro";
 
 <style>
     @keyframes borderPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(51, 206, 51, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 15px rgba(51, 206, 51, 0.2);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(51, 206, 51, 0.4);
-  }
+      0% {
+        box-shadow: 0 0 0 0 rgba(51, 206, 51, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 0 15px rgba(51, 206, 51, 0.2);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(51, 206, 51, 0.4);
+      }
+    }
+
+  .animate-borderPulse {
+    animation: borderPulse 2s ease-in-out infinite;
 }
-
-.animate-borderPulse {
-  animation: borderPulse 2s ease-in-out infinite;
-}
-
-
 </style>

@@ -1,3 +1,7 @@
+---
+import Header from "../components/Header.astro";
+---
+
 <!doctype html>
 <html lang="es">
 	<head>
@@ -8,25 +12,19 @@
 		<title>Carlos Pacheco - Portfolio</title>
 	</head>
 	<body class="bg-[#F4F5F6]">
-		<header class="sticky top-0 z-50 backdrop-blur-sm">
-		<div class="flex justify-between items-center px-6 py-6">
-			<div class="pt-2">
-			<p class="text-[#33CE33] text-2xl font-bold drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]">
-				PORTFOLIO
-			</p>
-			</div>
-			<nav>
-			<ul class="list-none flex gap-8 text-[14px] font-bold text-gray-500">
-				<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">INICIO</a></li>
-				<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">SOBRE MÍ</a></li>
-				<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">TECNOLOGÍAS</a></li>
-				<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">EXPERIENCIA</a></li>
-				<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">PROYECTOS</a></li>
-				<li><a href="#" class="hover:text-[#33CE33] cursor-pointer transition-colors duration-200 active:text-[#33CE33]">CONTACTO</a></li>
-			</ul>
-			</nav>
-		</div>
-		</header>
+		<Header />
 		<slot />
+		<!-- Script para que se abra y cierre el menú hamburguesas en móviles -->
+			<script>
+				const menuBtn = document.getElementById('menu-btn');
+				const menuMovil = document.getElementById('menu-movil');
+
+				
+				if (menuBtn && menuMovil) {
+					menuBtn.addEventListener('click', () => {
+					menuMovil.classList.toggle('hidden');
+					});
+				}
+			</script>
 	</body>
 </html>
