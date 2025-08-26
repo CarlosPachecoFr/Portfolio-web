@@ -1,0 +1,15 @@
+---
+// @ts-nocheck
+const { titulo, tecnologias } = Astro.props;
+---
+<div>
+    <p>{ titulo }</p>
+    <div>
+        {tecnologias.map(tecnologia => (
+            <div>
+                <img src={ tecnologia.img } alt={ tecnologia.nombre } class="w-10 h-10" />
+                <p>{ tecnologia.nombre }</p>
+            </div>
+        ))}
+    </div>
+</div>
