@@ -2,7 +2,7 @@
 // @ts-nocheck
 const { titulo, tecnologias } = Astro.props;
 ---
-<div class="flex flex-col mx-6 my-5 shadow-lg rounded-xl bg-white h-[400px]">
+<div class="flex flex-col mx-6 md:mx-0 shadow-lg rounded-xl bg-white h-[400px]">
     <p class="text-[30px] font-bold my-5 text-center bg-gradient-to-b from-[#147e14] via-[#4cba4c] to-[#8cad8c] bg-clip-text text-transparent">{ titulo }</p>
     <div class="grid grid-cols-3 gap-6 px-6 mb-5">
         {tecnologias.map(tecnologia => (
