@@ -1,0 +1,41 @@
+---
+import TarjetaExperiencia from "../components/TarjetaExperiencia.astro";
+const tarjetas = [
+    {
+        puesto: "Junior Full Stack Developer",
+        empresa: "NTT DATA Europe & Latam · Contrato de prácticas",
+        fecha: "Mar. 2025 - May. 2025 · 3 meses",
+        modalidad: "🔄Híbrido",
+        localizacion: "Salamanca, Castilla y León ·",
+        descripcion: "Durante mi experiencia participé en el desarrollo de una aplicación web utilizada por Iberdrola, orientada a la gestión de procesos corporativos. Además, colaboré en tareas de mantenimiento y nuevas implementaciones, siguiendo los estándares establecidos a nivel empresarial. Esta experiencia me permitió mejorar mis habilidades en trabajo colaborativo, aplicar buenas prácticas de desarrollo y adaptarme a entornos reales de producción.",
+        tecnologias: [
+            { img: "/src/assets/java.svg", nombre: "Java" },
+            { img: "/src/assets/spring-boot.svg", nombre: "Spring" },
+            { img: "/src/assets/html.svg", nombre: "HTML" },
+            { img: "/src/assets/bootstrap.svg", nombre: "Bootstrap" },
+            { img: "/src/assets/oracle.svg", nombre: "Oracle" },
+        ]
+    }
+]
+---
+
+<section id="experiencia" class="bg-[#FAFAFA]">
+    <div>
+        <div class="flex flex-col items-center justify-center px-10">
+            <p class="text-[30px] font-bold drop-shadow-[0_0_8px_rgba(51,206,51,0.6)] mt-20">Experiencia</p>
+            <div class="border-b-4 border-b-[#33CE33] w-15 my-5"></div>
+        </div>
+        <div class="flex items-center justify-center md:px-10">
+            {tarjetas.map(tarjeta => (
+                <TarjetaExperiencia  puesto={tarjeta.puesto} empresa={tarjeta.empresa} fecha={tarjeta.fecha} modalidad={tarjeta.modalidad} localizacion={tarjeta.localizacion} descripcion={tarjeta.descripcion} tecnologias={tarjeta.tecnologias} />
+            ))}
+        </div>
+        <div class="flex flex-col items-center justify-center">
+            <p class="text-gray-500">¿Hablamos de nuevas oportunidades?</p>
+            <div class="flex items-center mt-3">
+                <a href="" class="text-[#33CE33] font-bold">Hablemos</a>
+                <img class="w-5 h-5 pt-1 pl-2" src="/src/assets/flecha.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>

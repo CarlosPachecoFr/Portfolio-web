@@ -19,6 +19,7 @@ const tarjetas = [
             {nombre: "Java", img: "/src/assets/java.svg"},
             {nombre: "Spring Boot", img: "/src/assets/spring-boot.svg"},
             {nombre: "MySQL", img: "/src/assets/mysql.svg"},
+            {nombre: "Oracle", img: "/src/assets/oracle-letras.svg"},
             {nombre: "Maven", img: "/src/assets/maven.svg"},
             {nombre: "JWT", img: "/src/assets/jwt.png"},
         ]
@@ -52,7 +53,7 @@ const tarjetas = [
             <div class="border-b-4 border-b-[#33CE33] w-15 mt-5"></div>
             <p class="text-center text-sm sm:text-lg leading-relaxed mt-5 mb-8 text-gray-500">En mi viaje por el mundo del desarrollo web, he cultivado experiencia y habilidades en una variedad de tecnologías. Mi stack tecnológico incluye:</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:px-20 mb-24">
             {tarjetas.map(tarjeta => (
                 <TarjetaTecnologias titulo={tarjeta.titulo} tecnologias={tarjeta.tecnologias} />
             ))}
