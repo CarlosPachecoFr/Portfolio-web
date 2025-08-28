@@ -28,7 +28,7 @@ const { puesto, empresa, fecha, modalidad, localizacion,descripcion, tecnologias
             {tecnologias.map(tecnologia => (
                 <div class="bg-[#E7F8E7] border-1 border-[#BEEEBE] text-[#52D552] flex items-center justify-center p-1 text-[12px] rounded-lg">
                     <img class="w-5 h-5" src={ tecnologia.img } alt={ tecnologia.nombre }>
-                    <p class="pl-1 whitespace-nowrap">{ tecnologia.nombre }</p>
+                    <p class="pl-1 truncate">{ tecnologia.nombre }</p>
                 </div>
             ))}
         </div>
