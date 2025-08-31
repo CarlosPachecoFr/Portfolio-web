@@ -1,0 +1,10 @@
+---
+const { icono, titulo, descripcion, enlace } = Astro.props;
+---
+<div class="shadow-lg rounded-xl bg-white flex items-center p-3 h-[90px]">
+    <div class="text-2xl">{ icono }</div>
+    <div class="pl-4">
+        <p class="text-gray-500">{ titulo }</p>
+        <a class="font-semibold text-gray-800" href={ enlace }>{ descripcion }</a>
+    </div>
+</div>
