@@ -8,7 +8,7 @@ import Header from "../components/Header.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/assets/Logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Carlos Pacheco - Portfolio</title>
 	</head>
@@ -17,44 +17,96 @@ import Header from "../components/Header.astro";
 		<slot />
 		<Footer />
 		
-		<!-- Script para que se abra y cierre el menú hamburguesas en móviles -->
-			<script>
-				const menuBtn = document.getElementById('menu-btn');
-				const menuMovil = document.getElementById('menu-movil');
+		<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-				
-				if (menuBtn && menuMovil) {
-					menuBtn.addEventListener('click', () => {
-					menuMovil.classList.toggle('hidden');
-					});
-				}
-			</script>
+  // Toggle menú hamburguesa
+  const menuBtn = document.getElementById('menu-btn');
+  const menuMovil = document.getElementById('menu-movil');
 
-		<!-- Script para que funcione cada seccion del nav -->
-		 <script>
-			const links = document.querySelectorAll('.nav-link');
+  if (menuBtn && menuMovil) {
+    const lines = menuBtn.querySelectorAll('span');
 
-			links.forEach(link => {
-				link.addEventListener('click', () => {
-					links.forEach(l => l.classList.remove('text-[#33CE33]', 'drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]'));
-					link.classList.add('text-[#33CE33]', 'drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]');
-				});
-			});
+    function toggleMenu() {
+      if (lines.length === 3) {
+        // Transformación de la X
+        lines[0].classList.toggle('rotate-45');
+        lines[0].classList.toggle('translate-y-2');
+        lines[1].classList.toggle('opacity-0');
+        lines[2].classList.toggle('-rotate-45');
+        lines[2].classList.toggle('-translate-y-2');
+      }
 
-			const sections = document.querySelectorAll('section');
-			window.addEventListener('scroll', () => {
-				let scrollPos = window.scrollY + 100;
-				sections.forEach(section => {
-					const top = section.offsetTop;
-					const bottom = top + section.offsetHeight;
-					const id = section.getAttribute('id');
-					const link = document.querySelector(`.nav-link[href="#${id}"]`);
-					if (scrollPos >= top && scrollPos < bottom) {
-						links.forEach(l => l.classList.remove('text-[#33CE33]', 'drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]'));
-						if (link) link.classList.add('text-[#33CE33]', 'drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]');
-					}
-				});
-			});
-		 </script>
+      // Animación de altura del menú
+      if(menuMovil){
+		if (menuMovil.style.maxHeight && menuMovil.style.maxHeight !== '0px') {
+			menuMovil.style.maxHeight = '0px';
+		} else {
+			menuMovil.style.maxHeight = menuMovil.scrollHeight + 'px';
+		}
+	  }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+  }
+
+  // Nav-link activo y cierre de menú móvil al click
+  const links = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section');
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      // Remueve clase activa de todos
+      links.forEach(l => l.classList.remove(
+        'text-[#33CE33]', 
+        'drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]'
+      ));
+
+      // Agrega clase activa al link clicado
+      link.classList.add(
+        'text-[#33CE33]', 
+        'drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]'
+      );
+
+      // Cierra el menú móvil si está abierto
+      if (menuMovil && menuMovil.style.maxHeight && menuMovil.style.maxHeight !== '0px') {
+        menuMovil.style.maxHeight = '0px';
+        if (menuBtn) {
+          const lines = menuBtn.querySelectorAll('span');
+          if (lines.length === 3) {
+            lines[0].classList.remove('rotate-45', 'translate-y-2');
+            lines[1].classList.remove('opacity-0');
+            lines[2].classList.remove('-rotate-45', '-translate-y-2');
+          }
+        }
+      }
+    });
+  });
+
+  // Cambiar clase activa según scroll
+  window.addEventListener('scroll', () => {
+    let scrollPos = window.scrollY + 100;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      const id = section.getAttribute('id');
+      const link = document.querySelector(`.nav-link[href="#${id}"]`);
+      if (scrollPos >= top && scrollPos < bottom) {
+        links.forEach(l => l.classList.remove(
+          'text-[#33CE33]', 
+          'drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]'
+        ));
+        if (link) {
+          link.classList.add(
+            'text-[#33CE33]', 
+            'drop-shadow-[0_0_8px_rgba(51,206,51,0.6)]'
+          );
+        }
+      }
+    });
+  });
+
+});
+</script>
 	</body>
 </html>
