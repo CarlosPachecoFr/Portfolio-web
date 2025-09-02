@@ -10,23 +10,23 @@
         <div class="grid grid-cols-1 md:grid-cols-2 md:gap-10">
             <div class="flex flex-col mb-4">
                 <label class="font-semibold">Nombre *</label>
-                <input name="nombre" class="border-1 border-gray-300 rounded-lg p-2 bg-gray-50 mt-2 focus:outline-[#33CE33] focus:invalid:outline-red-500" type="text" required>
+                <input name="nombre" class="nombreInput border-1 border-gray-300 rounded-lg p-2 bg-gray-50 mt-2" type="text" required>
             </div>
             <div class="flex flex-col mb-4">
                 <label class="font-semibold">Email *</label>
-                <input name="email" class="border-1 border-gray-300 rounded-lg p-2 bg-gray-50 mt-2 focus:outline-[#33CE33] focus:invalid:outline-red-500" type="email" required>
+                <input name="email" class="emailInput border-1 border-gray-300 rounded-lg p-2 bg-gray-50 mt-2" type="email" required>
             </div>
         </div>
         <div class="flex flex-col mb-4">
             <label class="font-semibold">Asunto *</label>
-            <input name="asunto" class="border-1 border-gray-300 rounded-lg p-2 bg-gray-50 mt-2 focus:outline-[#33CE33] focus:invalid:outline-red-500" type="text" required>
+            <input name="asunto" class="asuntoInput border-1 border-gray-300 rounded-lg p-2 bg-gray-50 mt-2" type="text" required>
         </div>
         <div class="flex flex-col mb-4">
             <label class="font-semibold">Mensaje *</label>
-            <textarea name="mensaje" class="border-1 border-gray-300 rounded-lg p-2 bg-gray-50 mt-2 pb-10 focus:outline-[#33CE33] focus:invalid:outline-red-500" required></textarea>
+            <textarea name="mensaje" class="mensajeTextArea border-1 border-gray-300 rounded-lg p-2 bg-gray-50 mt-2 pb-10" required></textarea>
         </div>
         <div class="mt-5">
-            <button type="submit" class="w-full bg-[#33CE33] text-white flex items-center justify-center p-2 rounded-lg hover:cursor-pointer ease-in-out duration-300 hover:bg-[#41e841]">
+            <button type="submit" class="botonEnviar w-full bg-[#33CE33] text-white flex items-center justify-center p-2 rounded-lg hover:cursor-pointer ease-in-out duration-300 hover:bg-[#41e841]">
                 <p>Enviar mensaje</p>
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -35,3 +35,99 @@
         </div>
     </form>
 </div>
+
+<script>
+    const botonEnviar = document.querySelector(".botonEnviar");
+
+    const spanErrorNombre = document.createElement("span");
+    const spanErrorEmail = document.createElement("span");
+    const spanErrorAsunto = document.createElement("span");
+    const spanErrorMensaje = document.createElement("span");
+
+    botonEnviar?.addEventListener("click", (event) => {
+        event.preventDefault();
+        
+        const esNombreValido = validarNombre();
+        const esEmailValido = validarEmail();
+        const esAsuntoValido = validarAsunto();
+        const esMensajeValido = validarMensaje();
+
+        if(esNombreValido && esEmailValido && esAsuntoValido && esMensajeValido){
+            document.querySelector("form")?.submit();
+        }
+
+    });
+
+    function validarNombre(){
+        const nombreInput = document.querySelector(".nombreInput") as HTMLInputElement;
+        spanErrorNombre.textContent = "";
+        nombreInput.style.borderColor = "#D1D5DC";
+        if(nombreInput){
+            const nombre = nombreInput.value.trim();
+            if(nombre === ""){
+                spanErrorNombre.textContent = "El nombre es obligatorio";
+                spanErrorNombre.className = "text-red-500 text-sm pt-1";
+                nombreInput.style.borderColor = "red";
+                nombreInput.parentElement?.appendChild(spanErrorNombre);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validarEmail(){
+        const emailInput = document.querySelector(".emailInput") as HTMLInputElement;
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        spanErrorEmail.textContent = "";
+        emailInput.style.borderColor = "#D1D5DC";
+        if(emailInput){
+            const email = emailInput.value.trim();
+            if(email === ""){
+                spanErrorEmail.textContent = "El email es obligatorio";
+                spanErrorEmail.className = "text-red-500 text-sm pt-1";
+                emailInput.style.borderColor = "red";
+                emailInput.parentElement?.appendChild(spanErrorEmail);
+                return false;
+            } else if (!regexEmail.test(email)) {
+                spanErrorEmail.textContent = "El formato del email no es válido";
+                emailInput.style.borderColor = "red";
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validarAsunto(){
+        const asuntoInput = document.querySelector(".asuntoInput") as HTMLInputElement;
+        spanErrorAsunto.textContent = "";
+        asuntoInput.style.borderColor = "#D1D5DC";
+        if(asuntoInput){
+            const asunto = asuntoInput.value.trim();
+            if(asunto === ""){
+                spanErrorAsunto.textContent = "El asunto es obligatorio";
+                spanErrorAsunto.className = "text-red-500 text-sm pt-1";
+                asuntoInput.style.borderColor = "red";
+                asuntoInput.parentElement?.appendChild(spanErrorAsunto);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validarMensaje(){
+        const mensajeInput = document.querySelector(".mensajeTextArea") as HTMLTextAreaElement;
+        spanErrorMensaje.textContent = "";
+        mensajeInput.style.borderColor = "#D1D5DC";
+        if(mensajeInput){
+            const mensaje = mensajeInput.value.trim();
+            if(mensaje === ""){
+                spanErrorMensaje.textContent = "El mensaje es obligatorio";
+                spanErrorMensaje.className = "text-red-500 text-sm pt-1";
+                mensajeInput.style.borderColor = "red";
+                mensajeInput.parentElement?.appendChild(spanErrorMensaje);
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
