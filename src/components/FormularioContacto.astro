@@ -90,7 +90,9 @@
                 return false;
             } else if (!regexEmail.test(email)) {
                 spanErrorEmail.textContent = "El formato del email no es válido";
+                spanErrorEmail.className = "text-red-500 text-sm pt-1";
                 emailInput.style.borderColor = "red";
+                emailInput.parentElement?.appendChild(spanErrorEmail);
                 return false;
             }
         }
