@@ -26,7 +26,7 @@ const tarjetas = [
             <p class="text-[30px] font-bold drop-shadow-[0_0_8px_rgba(51,206,51,0.6)] mt-20">Experiencia</p>
             <div class="border-b-4 border-b-[#33CE33] w-15 my-5"></div>
         </div>
-        <div class="flex items-center justify-center md:px-10">
+        <div class="grid grid-cols-1 md:px-10">
             {tarjetas.map(tarjeta => (
                 <TarjetaExperiencia  puesto={tarjeta.puesto} empresa={tarjeta.empresa} fecha={tarjeta.fecha} modalidad={tarjeta.modalidad} localizacion={tarjeta.localizacion} descripcion={tarjeta.descripcion} tecnologias={tarjeta.tecnologias} />
             ))}
