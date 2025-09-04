@@ -5,8 +5,8 @@ const { titulo, tecnologias } = Astro.props;
 <div class="flex flex-col mx-6 md:mx-0 shadow-lg rounded-xl bg-white h-[400px] border-transparent transition-all duration-300 hover:shadow-xl hover:scale-[1.01] hover:-translate-y-2 group">
     <p class="text-[30px] font-bold my-5 text-center bg-gradient-to-b from-[#147e14] via-[#4cba4c] to-[#8cad8c] bg-clip-text text-transparent group-hover:from-[#0f5f0f] group-hover:via-[#3a9a3a] group-hover:to-[#7a9d7a] transition-all duration-300">{ titulo }</p>
     <div class="grid grid-cols-3 gap-6 px-6 mb-5">
-        {tecnologias.map(tecnologia => (
-            <div class="flex items-center flex-col transition-all duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer group/tech">
+        {tecnologias.map((tecnologia, index) => (
+            <div data-aos="zoom-in" data-aos-delay={index * 100} data-aos-duration="1000" class="flex items-center flex-col transition-all duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer group/tech">
                 <img src={ tecnologia.img } alt={ tecnologia.nombre } class="w-12 h-12 transition-all duration-300 group-hover/tech:scale-110 group-hover/tech:rotate-3" />
                 <p class="text-base font-semibold text-gray-500 pt-1 whitespace-nowrap w-24 text-center transition-all duration-300 group-hover/tech:text-green-600">{ tecnologia.nombre }</p>
             </div>
