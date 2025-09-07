@@ -1,46 +1,35 @@
-# Astro Starter Kit: Basics
+# Portfolio de Carlos Pacheco
 
-```sh
-npm create astro@latest -- --template basics
-```
+¡Bienvenido a mi portfolio personal! Este sitio web es una muestra de mis habilidades, proyectos y experiencia como desarrollador web. Está construido con **Astro** para una generación de sitios estáticos rápida y moderna, y **Tailwind CSS** para un diseño elegante y responsivo.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Sobre el Proyecto
 
-## 🚀 Project Structure
+Este portfolio refleja mi pasión por la tecnología y mi trayectoria como desarrollador Full Stack. Aquí encontrarás una selección de mis proyectos, un resumen de mis habilidades técnicas y formas de contactarme para posibles colaboraciones o oportunidades profesionales.
 
-Inside of your Astro project, you'll see the following folders and files:
+### Características
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- **Diseño Responsivo**: Optimizado para todos los dispositivos gracias a Tailwind CSS.
+- **Rendimiento Rápido**: Desarrollado con Astro para tiempos de carga ultrarrápidos.
+- **Interfaz Moderna y Limpia**: Diseño minimalista enfocado en la usabilidad.
+- **Galería de Proyectos**: Muestra de mis trabajos con enlaces a repositorios.
+- **Sección de Contacto**: Canales para conectar conmigo fácilmente.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🌐 Visita el Sitio
 
-## 🧞 Commands
+El portfolio está desplegado en Netlify. Puedes visitarlo aquí:\
+🔗 [Carlos Pacheco - Portfolio](https://carlospachecoportfolio.netlify.app/)
 
-All commands are run from the root of the project, from a terminal:
+## 🛠️ Tecnologías Utilizadas
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **Astro**: Generador de sitios estáticos para crear sitios rápidos y optimizados.
+- **Tailwind CSS**: Framework CSS basado en utilidades para un diseño ágil y responsivo.
+- **JavaScript**: Para interactividad y contenido dinámico.
+- **Netlify**: Plataforma de despliegue para alojar el sitio.
 
-## 👀 Want to learn more?
+## 📫 Contacto
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+¿Tienes un proyecto en mente o quieres charlar sobre tecnología? ¡Estoy abierto a nuevas oportunidades! Contáctame a través de:
+
+- **GitHub**: [CarlosPachecoFr](https://github.com/CarlosPachecoFr)
+- **Correo Electrónico**: carlospachecofrutos@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/carlos-pacheco-7825a4351/
