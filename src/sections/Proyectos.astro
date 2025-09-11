@@ -12,7 +12,8 @@ const tarjetas = [
             { img: "/assets/tailwindcss.svg", nombre: "TailwindCSS"}
         ],
         enlace: "https://github.com/CarlosPachecoFr/Gestor-Presupuestos-Personales-Angular",
-        stack: "Frontend"
+        stack: "Frontend",
+        video: "/assets/videoFrontend-gpp.mp4"
     },
     {
         img: "/assets/gpp-2.png",
@@ -27,7 +28,8 @@ const tarjetas = [
             { img: "/assets/maven.svg", nombre: "Maven" }
         ],
         enlace: "https://github.com/CarlosPachecoFr/Gestor-Presupuestos-Personales-Microservicios",
-        stack: "Backend"
+        stack: "Backend",
+        video: "/assets/videoBackend-gpp.mp4"
     },
     {
         img: "/assets/rvsp-1.png",
@@ -42,7 +44,8 @@ const tarjetas = [
             { img: "/assets/firebase.svg", nombre: "Firebase" },
         ],
         enlace: "https://github.com/CarlosPachecoFr/proyecto-angular19-RiverSpain",
-        stack: "Frontend"
+        stack: "Frontend",
+        video: "/assets/videoRiverSpain.mp4"
     }
 ]
 ---
@@ -62,6 +65,7 @@ const tarjetas = [
                     tecnologias={tarjeta.tecnologias}
                     enlace={tarjeta.enlace}
                     stack={tarjeta.stack}
+                    video={tarjeta.video}
                 />
             ))}
         </div>
