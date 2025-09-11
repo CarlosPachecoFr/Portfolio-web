@@ -41,13 +41,13 @@ const { img, titulo, descripcion, tecnologias, enlace, stack, video } = Astro.pr
     </div>
 </div>
 <!-- Modal -->
-<div id="videoModal" class="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center hidden z-50">
+<div id="videoModal" class="fixed inset-0 bg-black/30 backdrop-blur-sm items-center justify-center hidden z-50">
     <div class="bg-white rounded-lg overflow-hidden relative w-[90%] max-w-2xl shadow-xl">
     <button id="closeModal" 
             class="absolute top-2 right-2 text-gray-600 hover:text-black text-2xl font-bold z-10">
       &times;
     </button>
-        <video id="videoPlayer" class="w-full" controls>
+        <video id="videoPlayer" class="w-full" controls playsinline>
             <source src={ video } type="video/mp4">
             Tu navegador no soporta vídeo.
         </video>
@@ -67,12 +67,14 @@ const { img, titulo, descripcion, tecnologias, enlace, stack, video } = Astro.pr
                 (video.querySelector('source') as HTMLSourceElement).src = videoSrc!;
                 video.load();
                 modal.classList.remove('hidden');
+                modal.classList.add('flex');
                 video.play();
             });
         });
 
         closeBtn.addEventListener('click', () => {
             modal.classList.add('hidden');
+            modal.classList.remove('flex');
             video.pause();
             video.currentTime = 0;
         });
@@ -81,6 +83,7 @@ const { img, titulo, descripcion, tecnologias, enlace, stack, video } = Astro.pr
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.add('hidden');
+                modal.classList.remove('flex');
                 video.pause();
                 video.currentTime = 0;
             }
